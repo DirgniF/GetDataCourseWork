@@ -9,8 +9,11 @@ For detailed information on the source data and description of data sets, see in
 
 ##Prerequisites
 1)The R-package "plyr" should be loaded. It is available from cran.
+
 2) The script should be placed in the working directory.
+
 3) The following 8 files, available from the link above, should be in the same directory as this script.
+
 * 'X_test.txt'
 * 'Y_test.txt'
 * 'subject_test.txt'
@@ -22,18 +25,18 @@ For detailed information on the source data and description of data sets, see in
 
 ## Summary
 The script produces two output data frames:
-selectedData contains all information about mean and standard deviation of all measurements.(result of Sections 1A->1C in the script file)
-summaryData contains the average for each activity and subject in the above table.(result of Section 2 in the script file)
+* selectedData contains all information about mean and standard deviation of all measurements.(result of Sections 1A->1C in the script file)
+* summaryData contains the average for each activity and subject in the above table.(result of Section 2 in the script file)
 Note that both output data frames have a WIDE format, since it is assumed that there is correlation between the different measures, and as such, each record can be seen as different information about one observation.
 
-## Section 1A: Reading all the input files
+### Section 1A: Reading all the input files
 training set and test set are imported, as well as activity and features
 
-## Section 1B: Combine data
+### Section 1B: Combine data
 Both for the test and the training data, we use cbind to create a set with a column for Subject and Activity and then all the measurement information variables are added as columns
 Next, we combine test and training set using rbind.
 
-## Section 1C: Extract and Label Data
+### Section 1C: Extract and Label Data
 Next to Subject and Activity, only those features containing information about Mean and Std are extracted.
 The naming convention of the original dataset is largely preserved, because we feel it is a good compromise between readability and having variable names of manageable length. However, the following two changes are made to ensure the variable names meet R requirements:
 - brackets ("()") are removed
@@ -42,7 +45,7 @@ Finally, a descriptive name is applied to the activities
 
 The results are starred in "selectedData"
 
-## Section 2: Summarize Data
+### Section 2: Summarize Data
 This step assumed that the "plyr" package is installed.
 For each subject and activity, we aggregate using ddply to calculate the mean of each measurement. 
 The suffix "_mean" is added to the column names of the original data frame "selectedData".

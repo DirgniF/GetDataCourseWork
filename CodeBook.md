@@ -1,7 +1,7 @@
 ==================================================================
 Coursera Cleaning and Getting Data - Course Project
-Version 1.3
 ==================================================================
+Version 1.3 - John Doe
 
 For detailed information on the source data and description of data sets, see information available from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 

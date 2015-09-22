@@ -1,9 +1,9 @@
 # GetDataCourseWork
 ==================================================================
 Coursera Cleaning and Getting Data - Course Project
-Version 1.3
 ==================================================================
-John Doe
+
+Version 1.3 - John Doe
 
 The script in this submission can be used to clean and aggregate the data collected from the accelerometers from the Samsung Galaxy S smartphone.
 For information on the raw data that are used for this project, and information on how these data were collected, see https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 

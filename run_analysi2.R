@@ -43,7 +43,7 @@ selectedData[,2]<-factor(selectedData[,2],labels=Activities[,2])
 
 ## SECTION 2 - Summarize Data
 ## -----------------------------
-if (!(require("plyr"))){install.packages("plyr")}
+require(ddply)
 MeanData<-ddply(selectedData,.(Subject,Activity),colwise(mean))
 
 DataColumnNames<-names(selectedData)[-(1:2)]

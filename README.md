@@ -16,11 +16,9 @@ For information on the raw data that are used for this project, and information 
 * 'CodeBook.md': Contains a description of the different variables included in the two data frames.
 
 ##Prerequisites
-1)The R-package "plyr" should be loaded. It is available from cran.
+1) The script should be placed in the working directory.
 
-2) The script should be placed in the working directory.
-
-3) The following 8 files, available from the link above, should be in the same directory as this script.
+2) The following 8 files, available from the link above, should be in the same directory as this script.
 
 * 'X_test.txt'
 * 'Y_test.txt'
@@ -45,16 +43,16 @@ Both for the test and the training data, we use cbind to create a set with a col
 Next, we combine test and training set using rbind.
 
 ### Section 1C: Extract and Label Data
-Next to Subject and Activity, only those features containing information about Mean and Std are extracted.
+Next to Subject and Activity, only those features containing information about Mean and Std are extracted. We deliberately choose to only extract columns with a name that contains "mean(" or "std(", even though the datasource contains some variables where mean appears elsewhere in the variable's name (without round brackets ())"..
 The naming convention of the original dataset is largely preserved, because we feel it is a good compromise between readability and having variable names of manageable length. However, the following two changes are made to ensure the variable names meet R requirements:
 - brackets ("()") are removed
 - hyphens ("-") are replaced by underscore ("_")
 Finally, a descriptive name is applied to the activities
 
-The results are starred in "selectedData"
+The results are stored in "selectedData"
 
 ### Section 2: Summarize Data
-This step assumed that the "plyr" package is installed.
+This step starts with installing (if needed) and loading the plyr package.
 For each subject and activity, we aggregate using ddply to calculate the mean of each measurement. 
 The suffix "_mean" is added to the column names of the original data frame "selectedData".
 The results are written to the file "MeanData.txt"
